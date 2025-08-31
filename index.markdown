@@ -24,7 +24,7 @@ We present audio examples from baselines and our methods in this section, includ
 
 ## Automatic Pitch Correction (APC)
 
-Given a detuned singing voice and a target note sequence, APC aims to generate an in-tune pitch contour that aligns with the target notes while preserving the singer's original style. 
+Given a detuned singing voice (**Off-key Singing**) and a target note sequence (**Target Notes**), APC aims to generate an in-tune pitch contour that aligns with the target notes while preserving the singer's original style for correction. We compare our methods, i.e., **StylePitcher** and **StylePitcher (w/o smooth)**, with [Diff-Pitcher](https://diffpitcher.github.io/demo/).
 
 <table class="audio-table">
   <thead>
@@ -70,10 +70,10 @@ Given a detuned singing voice and a target note sequence, APC aims to generate a
 
 ## Style Transfer for Singing Voice Synthesis (SVS)
 
-Given target lyrics, musical score and a reference singing voice, style transfer for SVS aims to synthesize vocals that match the target content while resembling the singing styles of the reference. Our methods support both parallel and non-parallel style transfer.
+Given target lyrics, musical score and a reference singing voice, style transfer for SVS aims to synthesize vocals that match the target content while resembling the singing styles of the reference. We compare our methods, i.e., **StylePitcher** and **StylePitcher (w/o smooth)**, with [StyleSinger](https://aaronz345.github.io/StyleSingerDemo/). All the methods support both parallel and non-parallel style transfer. 
 
 ### Parallel Style Transfer
-In the parallel style transfer setting, the content of the reference singing voice is the same as the target lyrics and musical scores. We show the reference audio here for both the singing content (lyrics and musical scores) and the reference singing styles.
+In the parallel style transfer setting, the content of the reference singing voice is the same as the target lyrics and musical scores. We show the **Reference** audio here for both the singing content (lyrics and musical scores) and the reference singing styles.
 
 <table class="audio-table">
   <thead>
@@ -113,7 +113,7 @@ In the parallel style transfer setting, the content of the reference singing voi
 </table>
 
 ### Non-Parallel Style Transfer
-In the non-parallel style transfer setting, the content of the reference singing voice is different as the target lyrics and musical scores. 
+In the non-parallel style transfer setting, the content of the **Reference** singing voice is different as the target lyrics and notes. 
 
 **Example 1**
 
@@ -165,7 +165,7 @@ In the non-parallel style transfer setting, the content of the reference singing
 </table>
 
 ## Style-informed Singing Voice Conversion (SVC)
-While most existing SVC methods use the unchanged F0 from the target audio to generate vocals with the reference singer's timbre, StylePitcher can modify the F0 to also capture the singing styles of the target singer. In the following examples, target audio provides the singing content, and reference audio indicates the timbre and styles to converted.
+While most existing SVC methods use the unchanged F0 from the target audio to generate vocals with the reference singer's timbre, StylePitcher can modify the F0 to also capture the singing styles of the target singer. In the following examples, **Target** audio provides the singing content, and **Reference** audio indicates the timbre and styles to convert. We compare our methods, i.e., **StylePitcher** and **StylePitcher (w/o smooth)**, with **In-house SVC**.
 
 <table class="audio-table">
   <thead>
