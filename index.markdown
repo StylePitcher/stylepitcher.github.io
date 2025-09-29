@@ -6,12 +6,12 @@ description: Generating Style-Following, Expressive Pitch Curves for Versatile S
 
 # Introduction
 
-In this paper, we propose **StylePitcher**, the first general-purpose pitch curve generation model that learns to follow singing styles from reference audio. We formulate pitch generation as a masked infilling task: given surrounding pitch context and musical scores, StylePitcher learns to generate missing pitch segments that naturally continue the style patterns. 
+In this paper, we propose **StylePitcher**, the first general-purpose pitch curve generation model that learns to follow singing styles from reference audio. We formulate pitch generation as a masked infilling task: given surrounding pitch context and musical scores, StylePitcher learns to generate missing pitch segments that naturally continue the style patterns from context. 
 
 Once trained, StylePitcher serves as a plug-and-play module for diverse applications: enhancing **pitch correction with style preservation**, enabling **style transfer in SVS systems**, and improving **expressiveness in SVC**.
 
 <div align="center">
-  <img src="figures/models.png" width=800 alt="">
+  <img src="figures/models_2.png" width=800 alt="">
   <figcaption><strong>Fig.1</strong> Illustration of the model architecture of (a) StylePitcher and (b) Applications.</figcaption>
 </div>
 
@@ -19,7 +19,7 @@ Once trained, StylePitcher serves as a plug-and-play module for diverse applicat
 
 We present audio examples from baselines and our methods in this section, including following applications:
 * Automatic Pitch Correction
-* Style Transfer for Singing Voice Synthesis
+* Zero-shot Singing Voice Synthesis with Style Transfer
 * Style-informed Singing Voice Conversion
 
 ## Automatic Pitch Correction (APC)
@@ -68,12 +68,13 @@ Given a detuned singing voice (**Off-key Singing**) and a target note sequence (
   </tbody>
 </table>
 
-## Style Transfer for Singing Voice Synthesis (SVS)
+## Zero-shot Singing Voice Synthesis (SVS) with Style Transfer
 
-Given target lyrics, musical score and a reference singing voice, style transfer for SVS aims to synthesize vocals that match the target content while resembling the singing styles of the reference. We compare our methods, i.e., **StylePitcher** and **StylePitcher (w/o smooth)**, with [StyleSinger](https://aaronz345.github.io/StyleSingerDemo/). All the methods support both parallel and non-parallel style transfer. 
+Given target lyrics, musical score and a reference singing voice, style transfer for SVS aims to synthesize vocals that match the target content while resembling the singing styles of the reference. 
+In the following examples, the singers in the reference audio have never been seen by the model during training, i.e., a zero-shot setting. We compare our methods, i.e., **StylePitcher** and **StylePitcher (w/o smooth)**, with [StyleSinger](https://aaronz345.github.io/StyleSingerDemo/). All the methods support both parallel and non-parallel style transfer. 
 
 ### Parallel Style Transfer
-In the parallel style transfer setting, the content of the reference singing voice is the same as the target lyrics and musical scores. We show the **Reference** audio here for both the singing content (lyrics and musical scores) and the reference singing styles.
+In the parallel style transfer setting, the content of the reference singing voice is the same as the target lyrics and musical scores. Thus, the **Reference** audio here provides both the singing content (lyrics and musical scores) and the singing styles for re-synthesis.
 
 <table class="audio-table">
   <thead>
@@ -113,7 +114,7 @@ In the parallel style transfer setting, the content of the reference singing voi
 </table>
 
 ### Non-Parallel Style Transfer
-In the non-parallel style transfer setting, the content of the **Reference** singing voice is different as the target lyrics and notes. 
+In the non-parallel style transfer setting, the content of the **Reference** singing voice differs from the target lyrics and notes. 
 
 **Example 1**
 
