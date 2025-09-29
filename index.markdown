@@ -1,7 +1,7 @@
 ---
 layout: home
 title: StylePitcher
-description: Generating Style-Following, Expressive Pitch Curves for Versatile Singing Tasks
+description: Generating Style-Following and Expressive Pitch Curves for Versatile Singing Tasks
 ---
 
 # Introduction
