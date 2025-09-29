@@ -11,7 +11,7 @@ In this paper, we propose **StylePitcher**, the first general-purpose pitch curv
 Once trained, StylePitcher serves as a plug-and-play module for diverse applications: enhancing **pitch correction with style preservation**, enabling **style transfer in SVS systems**, and improving **expressiveness in SVC**.
 
 <div align="center">
-  <img src="figures/models_2.png" style="width:90%;" alt="">
+  <img src="figures/models_2.png" style="width:80%;" alt="">
   <figcaption><strong>Fig.1</strong> Illustration of the methods. Subscripts *off* and *in* denote features from off-key and in-key singing in the APC task; *ref* and *tgt* refer to reference and target content for SVS and SVC tasks.</figcaption>
 </div>
 
